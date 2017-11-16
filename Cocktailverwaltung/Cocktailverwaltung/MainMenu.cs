@@ -7,15 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Cocktailverwaltung
 {
     public partial class MainMenu : Form
     {
+        
+
         public MainMenu()
         {
             InitializeComponent();
+            MessageBox.Show("Cool");
+            
+            /*MySqlDataAdapter command = new MySqlDataAdapter("SELECT benutzername,template_nr.templateverwaltung,templatename FROM templateverwaltung,benutzervewaltung WHERE benutzerverwaltung=" + txt_Benutzername.Text'Administrator'");
+            if()
+            {
+                lbl_Ausloggen.Text = "Eingeloggt als Administrator";
+            }
+            else
+            {
+                lbl_Ausloggen.Text = "Eingeloggt als Mitarbeiter";
+            }*/
         }
+
 
         #region Buttons
         private void MainMenu_Load(object sender, EventArgs e)
@@ -30,7 +45,8 @@ namespace Cocktailverwaltung
 
         private void btn_Ausloggen_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+            Environment.Exit(0);
         }
 
         private void btn_Getraenkeuebersicht_Click(object sender, EventArgs e)
@@ -63,5 +79,10 @@ namespace Cocktailverwaltung
             new Templateverwaltung().Show();
         }
         #endregion
+
+        private void lbl_Ausloggen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

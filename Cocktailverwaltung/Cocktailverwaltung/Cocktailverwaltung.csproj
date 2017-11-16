@@ -72,6 +72,7 @@
     <Compile Include="Getraenkeuebersicht.Designer.cs">
       <DependentUpon>Getraenkeuebersicht.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Lagerverwaltung.cs">
       <SubType>Form</SubType>
     </Compile>

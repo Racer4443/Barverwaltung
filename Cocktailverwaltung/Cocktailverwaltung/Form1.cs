@@ -27,16 +27,17 @@ namespace Cocktailverwaltung
         {
             MySqlConnection con = new MySqlConnection("SERVER=eduweb.kb.local;" + "DATABASE=team02;" + "UID=team02;" + "PASSWORD=T3amO2"); // connecting to database
             MySqlDataAdapter sda = new MySqlDataAdapter("SELECT COUNT(*) FROM benutzerverwaltung WHERE benutzername='" + txt_Benutzername.Text + "' AND passwort='" + txt_Passwort.Text + "'", con);
-            //geht Liste durch, schaut ob User in Datenbank
+            //search DB for User
             DataTable dt = new DataTable();
-            sda.Fill(dt); //Datatable wird mit sda (also dem Ausgelesenen) befüllt.
+            sda.Fill(dt); //datatable is filled with values from sda
+
             if (dt.Rows[0][0].ToString() == "1")
             {
                 this.Hide();
                 new MainMenu().Show();
             }
             else
-                MessageBox.Show("Falsche Eingabe!");
+                MessageBox.Show("Diesen Nutzer gibt es nicht.");
 
         }
 
@@ -45,5 +46,10 @@ namespace Cocktailverwaltung
 
             txt_Passwort.PasswordChar = '*';
         }
+        /*public static string Benutzername(txt_Benutzername)
+        {
+            string benutzername = txt_Benutzername.Text;
+            return benutzername;
+        }*/
     }
 }

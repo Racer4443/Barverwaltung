@@ -136,6 +136,7 @@
             this.lbl_Ausloggen.Size = new System.Drawing.Size(173, 15);
             this.lbl_Ausloggen.TabIndex = 8;
             this.lbl_Ausloggen.Text = "Eingeloggt als Mitarbeiter";
+            this.lbl_Ausloggen.Click += new System.EventHandler(this.lbl_Ausloggen_Click);
             // 
             // MainMenu
             // 
