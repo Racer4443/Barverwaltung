@@ -42,6 +42,7 @@
             this.btn_Zurueck.TabIndex = 9;
             this.btn_Zurueck.Text = "Zurück";
             this.btn_Zurueck.UseVisualStyleBackColor = true;
+            this.btn_Zurueck.Click += new System.EventHandler(this.btn_Zurueck_Click);
             // 
             // btn_neuerBenutzer
             // 
@@ -52,6 +53,7 @@
             this.btn_neuerBenutzer.TabIndex = 7;
             this.btn_neuerBenutzer.Text = "Neuer Benutzer";
             this.btn_neuerBenutzer.UseVisualStyleBackColor = true;
+            this.btn_neuerBenutzer.Click += new System.EventHandler(this.btn_neuerBenutzer_Click);
             // 
             // lbl_Benutzerverwaltung
             // 
