@@ -30,7 +30,6 @@ namespace Cocktailverwaltung
             //search DB for User
             DataTable dt = new DataTable();
             sda.Fill(dt); //datatable is filled with values from sda
-
             if (dt.Rows[0][0].ToString() == "1")
             {
                 this.Hide();

@@ -30,7 +30,7 @@ namespace Cocktailverwaltung
             else
             {
                 MySqlCommand benutzerdaten_einfuegen = new MySqlCommand("INSERT INTO benutzerverwaltung (vorname, nachname, benutzername, passwort, template_nr) VALUES ('"
-                    + txt_Vorname.Text + "', '" + txt_Nachname.Text + "', '" + txt_Benutzername.Text + "', '" + txt_Passwort.Text + "', '" + txt_TemplateNr + "');", con);
+                    + txt_Vorname.Text + "', '" + txt_Nachname.Text + "', '" + txt_Benutzername.Text + "', '" + txt_Passwort.Text + "', " + txt_TemplateNr.Text + ");", con);
                 try
                 {
                     var reader = benutzerdaten_einfuegen.ExecuteReader();
@@ -44,9 +44,9 @@ namespace Cocktailverwaltung
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
-                    MessageBox.Show("Fehler. Benutzer nichzt erstellt.");
+                    MessageBox.Show("Fehler. Benutzer nicht erstellt.");
                 }
-                this.Close();
+                Close();
                 new Benutzerverwaltung().Show();
             }
         }

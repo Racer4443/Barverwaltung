@@ -121,7 +121,7 @@
             this.txt_TemplateNr.Name = "txt_TemplateNr";
             this.txt_TemplateNr.Size = new System.Drawing.Size(100, 20);
             this.txt_TemplateNr.TabIndex = 9;
-            this.txt_TemplateNr.Text = "0";
+            this.txt_TemplateNr.Text = "1";
             // 
             // btn_OK
             // 
