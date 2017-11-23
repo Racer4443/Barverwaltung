@@ -162,6 +162,7 @@
             this.Controls.Add(this.lbl_Vorname);
             this.Name = "Neuer_Benutzer";
             this.Text = "Neuer_Benutzer";
+            this.Load += new System.EventHandler(this.Neuer_Benutzer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

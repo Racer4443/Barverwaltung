@@ -15,19 +15,27 @@ namespace Cocktailverwaltung
     {
         public Neuer_Benutzer()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void btn_OK_Click(object sender, EventArgs e)
         {
-            if(txt_Vorname.Text == "" || txt_Nachname.Text == "" || txt_Benutzername.Text == "" || txt_Passwort.Text == "" || txt_TemplateNr.Text == "")
+            MySqlConnection con = new MySqlConnection("SERVER=eduweb.kb.local;" + "DATABASE=team02;" + "UID=team02;" + "PASSWORD=T3amO2");
+
+            if (txt_Vorname.Text == "" || txt_Nachname.Text == "" || txt_Benutzername.Text == "" || txt_Passwort.Text == "" || txt_TemplateNr.Text == "")
             {
                 MessageBox.Show("Bitte füllen Sie alle Felder aus.");
             }
             else
             {
                 MySqlCommand benutzerdaten_einfuegen = new MySqlCommand("INSERT INTO benutzerverwaltung (vorname, nachname, benutzername, passwort, template_nr) VALUES '"
-                    + txt_Vorname.Text + "', '" + txt_Nachname.Text + "', '" + txt_Benutzername.Text + "', '" + txt_Passwort.Text + "', '" + txt_TemplateNr + "';");
+                    + txt_Vorname.Text + "', '" + txt_Nachname.Text + "', '" + txt_Benutzername.Text + "', '" + txt_Passwort.Text + "', '" + txt_TemplateNr + "';", con);
+                var reader = benutzerdaten_einfuegen.ExecuteReader();
+                while (reader.Read())
+                {
+                    benutzerdaten_einfuegen.ExecuteNonQuery();
+                }
+                reader.Close();
                 MessageBox.Show("Benutzer erstellt!");
                 this.Close();
                 new Benutzerverwaltung().Show();
@@ -38,6 +46,11 @@ namespace Cocktailverwaltung
         {
             this.Close();
             new Benutzerverwaltung().Show();
+        }
+
+        private void Neuer_Benutzer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
