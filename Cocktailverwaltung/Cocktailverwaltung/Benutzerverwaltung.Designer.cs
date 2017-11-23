@@ -75,6 +75,7 @@
             this.Controls.Add(this.lbl_Benutzerverwaltung);
             this.Name = "Benutzerverwaltung";
             this.Text = "Benutzerverwaltung";
+            this.Load += new System.EventHandler(this.Benutzerverwaltung_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

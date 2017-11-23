@@ -23,10 +23,15 @@ namespace Cocktailverwaltung
             new MainMenu().Show();
         }
 
-        private void btn_neuerBenutzer_Click(object sender, EventArgs e)
+        private void btn_neuerBenutzer_Click(object sender, EventArgs e) 
         {
             this.Close();
             new Neuer_Benutzer().Show();
+        }
+
+        private void Benutzerverwaltung_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

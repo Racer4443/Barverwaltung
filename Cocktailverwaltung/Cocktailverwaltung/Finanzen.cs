@@ -16,5 +16,10 @@ namespace Cocktailverwaltung
         {
             InitializeComponent();
         }
+
+        private void Finanzen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

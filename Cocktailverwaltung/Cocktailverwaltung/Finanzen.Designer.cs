@@ -61,6 +61,7 @@
             this.Controls.Add(this.lbl_Finanzen);
             this.Name = "Finanzen";
             this.Text = "Finanzen";
+            this.Load += new System.EventHandler(this.Finanzen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
