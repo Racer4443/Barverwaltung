@@ -33,6 +33,9 @@
             this.btn_neuesProdukt = new System.Windows.Forms.Button();
             this.btn_Suchen = new System.Windows.Forms.Button();
             this.btn_Zurueck = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Lagerverwaltung
@@ -85,11 +88,28 @@
             this.btn_Zurueck.Text = "Zurück";
             this.btn_Zurueck.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.dataGridView1.Location = new System.Drawing.Point(112, 151);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "eduweb.kb.local(team02)";
+            this.Column1.HeaderText = "Test";
+            this.Column1.Name = "Column1";
+            // 
             // Lagerverwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 451);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Zurueck);
             this.Controls.Add(this.btn_Suchen);
             this.Controls.Add(this.btn_neuesProdukt);
@@ -97,6 +117,8 @@
             this.Controls.Add(this.lbl_Lagerverwaltung);
             this.Name = "Lagerverwaltung";
             this.Text = "Lagerverwaltung";
+            this.Load += new System.EventHandler(this.Lagerverwaltung_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,5 +131,7 @@
         private System.Windows.Forms.Button btn_neuesProdukt;
         private System.Windows.Forms.Button btn_Suchen;
         private System.Windows.Forms.Button btn_Zurueck;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewLinkColumn Column1;
     }
 }
