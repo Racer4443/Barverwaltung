@@ -18,7 +18,6 @@ namespace Cocktailverwaltung
         public MainMenu()
         {
             InitializeComponent();
-            MessageBox.Show("Cool");
             
             /*MySqlDataAdapter command = new MySqlDataAdapter("SELECT benutzername,template_nr.templateverwaltung,templatename FROM templateverwaltung,benutzervewaltung WHERE benutzerverwaltung=" + txt_Benutzername.Text'Administrator'");
             if()
@@ -51,38 +50,45 @@ namespace Cocktailverwaltung
 
         private void btn_Getraenkeuebersicht_Click(object sender, EventArgs e)
         {
+            this.Close();
             new Getraenkeuebersicht().Show();
+            
         }
 
         private void btn_Benutzerverwaltung_Click(object sender, EventArgs e)
         {
+            this.Close();
             new Benutzerverwaltung().Show();
         }
 
         private void btn_Finanzen_Click(object sender, EventArgs e)
         {
+            this.Close();
             new Finanzen().Show();
         }
 
         private void btn_Lagerverwaltung_Click(object sender, EventArgs e)
         {
+            this.Close();
             new Lagerverwaltung().Show();
         }
 
         private void btn_Logbuch_Click(object sender, EventArgs e)
         {
+            this.Close();
             new Logbuch().Show();
         }
 
         private void btn_Templateverwaltung_Click(object sender, EventArgs e)
         {
+            this.Close();
             new Templateverwaltung().Show();
         }
         #endregion
 
         private void lbl_Ausloggen_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

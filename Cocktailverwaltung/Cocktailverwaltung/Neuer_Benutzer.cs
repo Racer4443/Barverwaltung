@@ -21,6 +21,7 @@ namespace Cocktailverwaltung
         private void btn_OK_Click(object sender, EventArgs e)
         {
             MySqlConnection con = new MySqlConnection("SERVER=eduweb.kb.local;" + "DATABASE=team02;" + "UID=team02;" + "PASSWORD=T3amO2");
+            con.Open();
 
             if (txt_Vorname.Text == "" || txt_Nachname.Text == "" || txt_Benutzername.Text == "" || txt_Passwort.Text == "" || txt_TemplateNr.Text == "")
             {
@@ -28,14 +29,22 @@ namespace Cocktailverwaltung
             }
             else
             {
-                MySqlCommand benutzerdaten_einfuegen = new MySqlCommand("INSERT INTO benutzerverwaltung (vorname, nachname, benutzername, passwort, template_nr) VALUES '"
-                    + txt_Vorname.Text + "', '" + txt_Nachname.Text + "', '" + txt_Benutzername.Text + "', '" + txt_Passwort.Text + "', '" + txt_TemplateNr + "';", con);
-                var reader = benutzerdaten_einfuegen.ExecuteReader();
-                while (reader.Read())
+                MySqlCommand benutzerdaten_einfuegen = new MySqlCommand("INSERT INTO benutzerverwaltung (vorname, nachname, benutzername, passwort, template_nr) VALUES ('"
+                    + txt_Vorname.Text + "', '" + txt_Nachname.Text + "', '" + txt_Benutzername.Text + "', '" + txt_Passwort.Text + "', '" + txt_TemplateNr + "');", con);
+                try
                 {
-                    benutzerdaten_einfuegen.ExecuteNonQuery();
+                    var reader = benutzerdaten_einfuegen.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        benutzerdaten_einfuegen.ExecuteNonQuery();
+                    }
+                    reader.Close();
                 }
-                reader.Close();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                
                 MessageBox.Show("Benutzer erstellt!");
                 this.Close();
                 new Benutzerverwaltung().Show();
