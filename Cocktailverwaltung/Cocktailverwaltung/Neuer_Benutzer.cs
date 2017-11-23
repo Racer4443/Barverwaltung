@@ -39,13 +39,13 @@ namespace Cocktailverwaltung
                         benutzerdaten_einfuegen.ExecuteNonQuery();
                     }
                     reader.Close();
+                    MessageBox.Show("Benutzer erstellt!");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Fehler. Benutzer nichzt erstellt.");
                 }
-                
-                MessageBox.Show("Benutzer erstellt!");
                 this.Close();
                 new Benutzerverwaltung().Show();
             }

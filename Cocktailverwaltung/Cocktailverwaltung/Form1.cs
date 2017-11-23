@@ -38,7 +38,6 @@ namespace Cocktailverwaltung
             }
             else
                 MessageBox.Show("Diesen Nutzer gibt es nicht.");
-
         }
 
         private void txt_Passwort_TextChanged(object sender, EventArgs e)
