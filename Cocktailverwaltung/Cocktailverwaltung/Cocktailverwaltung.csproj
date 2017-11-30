@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Benutzerloeschen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Benutzerloeschen.Designer.cs">
+      <DependentUpon>Benutzerloeschen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Benutzerverwaltung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="Templateverwaltung.Designer.cs">
       <DependentUpon>Templateverwaltung.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Benutzerloeschen.resx">
+      <DependentUpon>Benutzerloeschen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Benutzerverwaltung.resx">
       <DependentUpon>Benutzerverwaltung.cs</DependentUpon>
     </EmbeddedResource>

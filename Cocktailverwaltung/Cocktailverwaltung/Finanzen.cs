@@ -21,5 +21,11 @@ namespace Cocktailverwaltung
         {
 
         }
+
+        private void btn_Zurueck_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new MainMenu().Show();
+        }
     }
 }

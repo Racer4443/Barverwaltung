@@ -16,5 +16,11 @@ namespace Cocktailverwaltung
         {
             InitializeComponent();
         }
+
+        private void btn_Zurueck_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new MainMenu().Show();
+        }
     }
 }

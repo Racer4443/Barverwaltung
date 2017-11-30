@@ -39,6 +39,7 @@
             resources.ApplyResources(this.btn_Zurueck, "btn_Zurueck");
             this.btn_Zurueck.Name = "btn_Zurueck";
             this.btn_Zurueck.UseVisualStyleBackColor = true;
+            this.btn_Zurueck.Click += new System.EventHandler(this.btn_Zurueck_Click);
             // 
             // lbl_Templateverwaltung
             // 

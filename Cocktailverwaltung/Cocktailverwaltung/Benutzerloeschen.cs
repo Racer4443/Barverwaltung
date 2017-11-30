@@ -11,44 +11,48 @@ using MySql.Data.MySqlClient;
 
 namespace Cocktailverwaltung
 {
-    public partial class Neuer_Benutzer : Form
+    public partial class Benutzerloeschen : Form
     {
-        public Neuer_Benutzer()
+        public Benutzerloeschen()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
-        private void btn_OK_Click(object sender, EventArgs e)
+        private void Benutzerloeschen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Loeschen_Click(object sender, EventArgs e)
         {
             MySqlConnection con = new MySqlConnection("SERVER=eduweb.kb.local;" + "DATABASE=team02;" + "UID=team02;" + "PASSWORD=T3amO2");
             con.Open();
 
-            if (txt_Vorname.Text == "" || txt_Nachname.Text == "" || txt_Benutzername.Text == "" || txt_Passwort.Text == "" || txt_TemplateNr.Text == "")
+            if (txt_Benutzername.Text == "")
             {
                 MessageBox.Show("Bitte füllen Sie alle Felder aus.");
             }
             else
             {
-                MySqlCommand benutzerdaten_einfuegen = new MySqlCommand("INSERT INTO benutzerverwaltung (vorname, nachname, benutzername, passwort, template_nr) VALUES ('"
-                    + txt_Vorname.Text + "', '" + txt_Nachname.Text + "', '" + txt_Benutzername.Text + "', '" + txt_Passwort.Text + "', " + txt_TemplateNr.Text + ");", con);
+                MySqlCommand benutzer_loeschen = new MySqlCommand("DELETE FROM benutzerverwaltung WHERE benutzername = '" + txt_Benutzername.Text + "';", con);
                 try
                 {
-                    var reader = benutzerdaten_einfuegen.ExecuteReader();
+                    var reader = benutzer_loeschen.ExecuteReader();
                     while (reader.Read())
                     {
-                        benutzerdaten_einfuegen.ExecuteNonQuery();
+                        benutzer_loeschen.ExecuteNonQuery();
                     }
                     reader.Close();
-                    MessageBox.Show("Benutzer erstellt!");
+                    MessageBox.Show("Benutzer '" + txt_Benutzername.Text + "' gelöscht!");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
-                    MessageBox.Show("Fehler. Benutzer nicht erstellt.");
+                    MessageBox.Show("Fehler. Prüfen Sie den Benutzernamen und versuchen Sie erneut.");
                 }
                 Close();
-                con.Close();
                 new Benutzerverwaltung().Show();
+                con.Close();
             }
         }
 
@@ -56,11 +60,6 @@ namespace Cocktailverwaltung
         {
             this.Close();
             new Benutzerverwaltung().Show();
-        }
-
-        private void Neuer_Benutzer_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

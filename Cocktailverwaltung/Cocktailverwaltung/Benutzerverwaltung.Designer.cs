@@ -31,6 +31,7 @@
             this.btn_Zurueck = new System.Windows.Forms.Button();
             this.btn_neuerBenutzer = new System.Windows.Forms.Button();
             this.lbl_Benutzerverwaltung = new System.Windows.Forms.Label();
+            this.btn_Benutzerloeschen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Zurueck
@@ -65,11 +66,23 @@
             this.lbl_Benutzerverwaltung.TabIndex = 5;
             this.lbl_Benutzerverwaltung.Text = "Benutzerverwaltung";
             // 
+            // btn_Benutzerloeschen
+            // 
+            this.btn_Benutzerloeschen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_Benutzerloeschen.Location = new System.Drawing.Point(511, 9);
+            this.btn_Benutzerloeschen.Name = "btn_Benutzerloeschen";
+            this.btn_Benutzerloeschen.Size = new System.Drawing.Size(120, 50);
+            this.btn_Benutzerloeschen.TabIndex = 10;
+            this.btn_Benutzerloeschen.Text = "Benutzer löschen";
+            this.btn_Benutzerloeschen.UseVisualStyleBackColor = true;
+            this.btn_Benutzerloeschen.Click += new System.EventHandler(this.btn_Benutzerloeschen_Click);
+            // 
             // Benutzerverwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 451);
+            this.Controls.Add(this.btn_Benutzerloeschen);
             this.Controls.Add(this.btn_Zurueck);
             this.Controls.Add(this.btn_neuerBenutzer);
             this.Controls.Add(this.lbl_Benutzerverwaltung);
@@ -86,5 +99,6 @@
         private System.Windows.Forms.Button btn_Zurueck;
         private System.Windows.Forms.Button btn_neuerBenutzer;
         private System.Windows.Forms.Label lbl_Benutzerverwaltung;
+        private System.Windows.Forms.Button btn_Benutzerloeschen;
     }
 }

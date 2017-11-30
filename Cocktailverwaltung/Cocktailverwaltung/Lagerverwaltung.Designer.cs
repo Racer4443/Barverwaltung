@@ -87,6 +87,7 @@
             this.btn_Zurueck.TabIndex = 4;
             this.btn_Zurueck.Text = "Zurück";
             this.btn_Zurueck.UseVisualStyleBackColor = true;
+            this.btn_Zurueck.Click += new System.EventHandler(this.btn_Zurueck_Click);
             // 
             // dataGridView1
             // 
