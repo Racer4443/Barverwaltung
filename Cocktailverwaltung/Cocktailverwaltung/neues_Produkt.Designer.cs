@@ -39,13 +39,13 @@
             this.txt_Artikelbezeichnung = new System.Windows.Forms.TextBox();
             this.txt_Einkaufspreis = new System.Windows.Forms.TextBox();
             this.txt_Lieferant = new System.Windows.Forms.TextBox();
-            this.txt_Alkoholisch = new System.Windows.Forms.TextBox();
-            this.txt_Zubehör = new System.Windows.Forms.TextBox();
             this.txt_Menge_in_Litern = new System.Windows.Forms.TextBox();
             this.txt_Stueckzahl = new System.Windows.Forms.TextBox();
             this.txt_Hinzugefuegt_von = new System.Windows.Forms.TextBox();
             this.btn_OK = new System.Windows.Forms.Button();
             this.btn_Abbrechen = new System.Windows.Forms.Button();
+            this.cmb_Alkoholisch = new System.Windows.Forms.ComboBox();
+            this.cmb_Zubehoer = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbl_Artikelbezeichnung
@@ -141,20 +141,6 @@
             this.txt_Lieferant.Size = new System.Drawing.Size(100, 20);
             this.txt_Lieferant.TabIndex = 10;
             // 
-            // txt_Alkoholisch
-            // 
-            this.txt_Alkoholisch.Location = new System.Drawing.Point(138, 88);
-            this.txt_Alkoholisch.Name = "txt_Alkoholisch";
-            this.txt_Alkoholisch.Size = new System.Drawing.Size(100, 20);
-            this.txt_Alkoholisch.TabIndex = 11;
-            // 
-            // txt_Zubehör
-            // 
-            this.txt_Zubehör.Location = new System.Drawing.Point(138, 111);
-            this.txt_Zubehör.Name = "txt_Zubehör";
-            this.txt_Zubehör.Size = new System.Drawing.Size(100, 20);
-            this.txt_Zubehör.TabIndex = 12;
-            // 
             // txt_Menge_in_Litern
             // 
             this.txt_Menge_in_Litern.Location = new System.Drawing.Point(138, 134);
@@ -184,6 +170,7 @@
             this.btn_OK.TabIndex = 16;
             this.btn_OK.Text = "OK";
             this.btn_OK.UseVisualStyleBackColor = true;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
             // btn_Abbrechen
             // 
@@ -193,19 +180,42 @@
             this.btn_Abbrechen.TabIndex = 17;
             this.btn_Abbrechen.Text = "Abbrechen";
             this.btn_Abbrechen.UseVisualStyleBackColor = true;
+            this.btn_Abbrechen.Click += new System.EventHandler(this.btn_Abbrechen_Click);
+            // 
+            // cmb_Alkoholisch
+            // 
+            this.cmb_Alkoholisch.FormattingEnabled = true;
+            this.cmb_Alkoholisch.Items.AddRange(new object[] {
+            "0",
+            "1"});
+            this.cmb_Alkoholisch.Location = new System.Drawing.Point(138, 88);
+            this.cmb_Alkoholisch.Name = "cmb_Alkoholisch";
+            this.cmb_Alkoholisch.Size = new System.Drawing.Size(100, 21);
+            this.cmb_Alkoholisch.TabIndex = 18;
+            // 
+            // cmb_Zubehoer
+            // 
+            this.cmb_Zubehoer.FormattingEnabled = true;
+            this.cmb_Zubehoer.Items.AddRange(new object[] {
+            "0",
+            "1"});
+            this.cmb_Zubehoer.Location = new System.Drawing.Point(138, 111);
+            this.cmb_Zubehoer.Name = "cmb_Zubehoer";
+            this.cmb_Zubehoer.Size = new System.Drawing.Size(100, 21);
+            this.cmb_Zubehoer.TabIndex = 19;
             // 
             // neues_Produkt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.cmb_Zubehoer);
+            this.Controls.Add(this.cmb_Alkoholisch);
             this.Controls.Add(this.btn_Abbrechen);
             this.Controls.Add(this.btn_OK);
             this.Controls.Add(this.txt_Hinzugefuegt_von);
             this.Controls.Add(this.txt_Stueckzahl);
             this.Controls.Add(this.txt_Menge_in_Litern);
-            this.Controls.Add(this.txt_Zubehör);
-            this.Controls.Add(this.txt_Alkoholisch);
             this.Controls.Add(this.txt_Lieferant);
             this.Controls.Add(this.txt_Einkaufspreis);
             this.Controls.Add(this.txt_Artikelbezeichnung);
@@ -219,6 +229,7 @@
             this.Controls.Add(this.lbl_Artikelbezeichnung);
             this.Name = "neues_Produkt";
             this.Text = "neues_Produkt";
+            this.Load += new System.EventHandler(this.neues_Produkt_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,12 +248,12 @@
         private System.Windows.Forms.TextBox txt_Artikelbezeichnung;
         private System.Windows.Forms.TextBox txt_Einkaufspreis;
         private System.Windows.Forms.TextBox txt_Lieferant;
-        private System.Windows.Forms.TextBox txt_Alkoholisch;
-        private System.Windows.Forms.TextBox txt_Zubehör;
         private System.Windows.Forms.TextBox txt_Menge_in_Litern;
         private System.Windows.Forms.TextBox txt_Stueckzahl;
         private System.Windows.Forms.TextBox txt_Hinzugefuegt_von;
         private System.Windows.Forms.Button btn_OK;
         private System.Windows.Forms.Button btn_Abbrechen;
+        private System.Windows.Forms.ComboBox cmb_Alkoholisch;
+        private System.Windows.Forms.ComboBox cmb_Zubehoer;
     }
 }

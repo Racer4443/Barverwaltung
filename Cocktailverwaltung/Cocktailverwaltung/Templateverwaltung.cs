@@ -22,5 +22,10 @@ namespace Cocktailverwaltung
             this.Close();
             new MainMenu().Show();
         }
+
+        private void Templateverwaltung_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

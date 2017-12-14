@@ -60,6 +60,7 @@
             this.Controls.Add(this.btn_Zurueck);
             this.Controls.Add(this.lbl_Templateverwaltung);
             this.Name = "Templateverwaltung";
+            this.Load += new System.EventHandler(this.Templateverwaltung_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
