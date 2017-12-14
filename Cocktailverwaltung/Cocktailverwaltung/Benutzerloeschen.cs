@@ -30,7 +30,11 @@ namespace Cocktailverwaltung
 
             if (txt_Benutzername.Text == "")
             {
-                MessageBox.Show("Bitte füllen Sie alle Felder aus.");
+                MessageBox.Show("Bitte füllen Sie alle Felder aus.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txt_Benutzername.Text == Globals.benutzername)
+            {
+                MessageBox.Show("Sie können nicht den Benutzer löschen, mit dem Sie gerade angemeldet sind.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -48,7 +52,7 @@ namespace Cocktailverwaltung
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
-                    MessageBox.Show("Fehler. Prüfen Sie den Benutzernamen und versuchen Sie erneut.");
+                    MessageBox.Show("Fehler. Prüfen Sie den Benutzernamen und versuchen Sie erneut.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 Close();
                 new Benutzerverwaltung().Show();

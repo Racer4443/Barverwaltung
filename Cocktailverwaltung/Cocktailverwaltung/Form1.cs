@@ -32,12 +32,15 @@ namespace Cocktailverwaltung
             sda.Fill(dt); //datatable is filled with values from sda
             if (dt.Rows[0][0].ToString() == "1")
             {
-                string Benutzername = txt_Benutzername.Text;
+                Globals.benutzername = txt_Benutzername.Text;
                 this.Hide();
                 new MainMenu().Show();
             }
             else
+            {
                 MessageBox.Show("Diesen Nutzer gibt es nicht.");
+            }
+                
         }
 
         private void txt_Passwort_TextChanged(object sender, EventArgs e)
@@ -51,4 +54,9 @@ namespace Cocktailverwaltung
             return benutzername;
         }*/
     }
+}
+
+static class Globals
+{
+    public static string benutzername;
 }

@@ -28,5 +28,10 @@ namespace Cocktailverwaltung
             this.Close();
             new MainMenu().Show();
         }
+
+        private void btn_neuesProdukt_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

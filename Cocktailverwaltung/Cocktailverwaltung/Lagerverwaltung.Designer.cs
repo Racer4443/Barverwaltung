@@ -67,6 +67,7 @@
             this.btn_neuesProdukt.TabIndex = 2;
             this.btn_neuesProdukt.Text = "Neues Produkt";
             this.btn_neuesProdukt.UseVisualStyleBackColor = true;
+            this.btn_neuesProdukt.Click += new System.EventHandler(this.btn_neuesProdukt_Click);
             // 
             // btn_Suchen
             // 
